@@ -1,6 +1,6 @@
 
-##Node.js Projects
----
+Node.js Projects
+----------------
 
 **SoManyWords**  
 http://vexterity.com/somanywords
@@ -11,8 +11,8 @@ http://somanywords.vexterity.com
 
 
 
-##Static Site Builds  
----
+Static Site Builds  
+------------------
 
 **Able Angels**  
 http://ableangelslasvegas.com
@@ -28,8 +28,8 @@ http://hillmanlawfirm.com
 
 
 
-##Random Javascript
----
+Random Javascript
+-----------------
 
 **tanks**  
 http://tanks.vexterity.com
