@@ -75,6 +75,11 @@ Canvas game I started after playing World of Tanks for a month straight. Single 
 * Intensive Javascript
 
 
+**UB-Validate** - http://ubound.s3.amazonaws.com/validation/validationEngine/UBvalidationEngine-v1.01.js  
+jQuery plugin for form validation. Written specifically to handle internal multi-step forms. Can be viewed in action on level-interactive.com/contact and hillmanlawfirm.com. It's been used on tons of other landing pages. Would like to open-source it on github but haven't had the time.
+* jQuery
+
+
 **DD** - http://vexterity.com/dd (desktop)  
 Just some random minigame (idk) I developed to learn how to use sprite sheets in Javascript. Just a stick figure running around the bottom of your browser. Arrow keys and spacebar to jump.
 * HTML5 Canvas
