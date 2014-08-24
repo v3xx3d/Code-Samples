@@ -1,35 +1,43 @@
 
-**SoManyWords**
+##Node.js Projects
+---
 
+**SoManyWords**  
 http://vexterity.com/somanywords
 
-**SoManyWords Forum**
-
+**SoManyWords Forum**  
 http://somanywords.vexterity.com
 
 
 
-**Able Angels**
 
+##Static Site Builds  
+---
+
+**Able Angels**  
 http://ableangelslasvegas.com
 
-**EZ Sweep & Rake**
 
+**EZ Sweep & Rake**  
 http://ezsweepandrake.com
 
-**Hart Hillman**
 
+**Hart Hillman**  
 http://hillmanlawfirm.com
 
 
-**tanks**
 
+
+##Random Javascript
+---
+
+**tanks**  
 http://tanks.vexterity.com
 
-**dd**
 
+**dd**  
 http://vexterity.com/dd
 
-**idk**
 
+**idk**  
 http://vexterity.com/idk
