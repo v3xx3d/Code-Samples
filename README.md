@@ -76,7 +76,7 @@ Canvas game I started after playing World of Tanks for a month straight. Single 
 
 
 **UB-Validate** - http://ubound.s3.amazonaws.com/validation/validationEngine/UBvalidationEngine-v1.01.js  
-jQuery plugin for form validation. Written specifically to handle internal multi-step forms. Can be viewed in action on level-interactive.com/contact and hillmanlawfirm.com. It's been used on tons of other landing pages. Would like to open-source it on github but haven't had the time.
+jQuery plugin for form validation. Written specifically to handle internal multi-step forms. Can be viewed in action on level-interactive.com/contact and hillmanlawfirm.com. It's been used on tons of other landing pages. Would like to update and open-source it on github but haven't had the time.
 * jQuery
 
 
