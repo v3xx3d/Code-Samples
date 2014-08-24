@@ -3,7 +3,7 @@ Node.js Projects
 ----------------
 
 **SoManyWords** - http://vexterity.com/somanywords (mobile)  
-Online multiplayer boggle-type game. 1-5 players, Chat, Daily Challenges, Leaderboards, Stats. Active user-base. It's been an ongoing project and was my first delve into Node.js.
+Online multiplayer boggle-type game. 1-5 players, Chat, Daily Challenges, Leaderboards, Stats. Active user-base. It's been an ongoing project and was my first delve into Node.js. Could probably be rebuilt with better session management.
 * Node.js
 * Javascript
 * Socket.io
@@ -76,13 +76,13 @@ Canvas game I started after playing World of Tanks for a month straight. Single 
 
 
 **DD** - http://vexterity.com/dd (desktop)  
-Just some random minigame (idk) I developed to learn how to use sprite sheets in Javascript. Arrow keys and spacebar to jump.
+Just some random minigame (idk) I developed to learn how to use sprite sheets in Javascript. Just a stick figure running around the bottom of your browser. Arrow keys and spacebar to jump.
 * HTML5 Canvas
 * Javascript
 
 
 **idk** - http://vexterity.com/idk (desktop)  
-Probably as random as it gets. I don't even know why I'm sharing this. lol. Just wiggle your mouse around the screen.
+Probably as random as it gets. I don't even know why I'm sharing this. lol. Just wiggle your mouse around the screen. Click the squares to make them stay. I tried to make it a game at one point but it was dumb so I removed it.
 * Javascript
 
 
