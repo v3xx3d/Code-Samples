@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Able Angels Las Vegas</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<!-- FAHNTS!!!! -->
+	<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<div id="bg_wrap">
+	</div>
+
+	<div id="page_wrap">
+
+		<div id="content" class="container">
+			<img id="logo" src="img/logo.png" alt="Able Angels, LLC" />
+			<h1>wheels &amp; wings</h1>
+			<h2>can do incredible things</h2>
+
+			<p>We are the AbleAngels, Las Vegas’ premier mobility<br/> concerige. Let’s have an adventure: Vegas-Style.</p>
+
+			<h3>Coming Fall 2014</h3>
+			<hr/>
+			<h4>Contact an angel now at 1-855-746-0248 or by filling out the form below:</h4>
+
+			<div class="row">
+				<form id="form" method="post" action="/form-submit">
+					<div class="col-xs-12 col-sm-4">
+						<input type="text" name="name" placeholder="Name" />
+					</div>
+
+					<div class="col-xs-12 col-sm-4">
+						<input type="text" name="email" placeholder="Email Address" />
+					</div>
+
+					<div class="col-xs-12 col-sm-4">
+						<input type="text" name="phone" placeholder="Phone Number" />
+					</div>
+
+					<div class="col-xs-12">
+						<img class="submit" src="img/submit.png" alt="Submit Form" />
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="container">
+				<p>&copy; 2014 AbleAngels LLC. All Rights Reserved.</p>
+			</div>
+		</div>
+
+	</div>
+	
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="js/jquery.js"/></script>
+	<script type="text/javascript" src="js/scripts.js"/></script>
+	<script type="text/javascript" src="js/bootstrap.js"/></script>
+	<script type="text/javascript" src="js/validate.js"/></script>
+	<script type="text/javascript" src="js/masked-input.js"/></script>
+
+	<script type="text/javascript">
+	// contact form validation
+   		$('#form').ubvalidate({
+        	aliasfields: [
+	            {
+	                name: 'email',
+	                mapto: 'Email'
+	            },{
+	                name: 'name',
+	                mapto: 'NameFirst'
+	            }, {
+	                name: 'phone',
+	                mapto: 'Phone'
+	            }
+        	]
+    	});
+
+		$("input[name=phone]").mask("(999) 999-9999");
+
+	</script>
+
+</body>
+</html>

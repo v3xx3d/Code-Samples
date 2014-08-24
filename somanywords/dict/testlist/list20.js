@@ -1,0 +1,1 @@
+var curlist = ["UAKARI","UAKARIS"];

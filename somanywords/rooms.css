@@ -1,0 +1,273 @@
+.roomjoinbutton{
+	height: 31px;
+	width: 54px;
+	background: url(/somanywords/images/join.png) no-repeat;
+	background-size: contain;
+	margin: 0;
+	font-size: 1.2em;
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	cursor: pointer;
+}
+
+
+#roomwrapper{
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background: url(/somanywords/images/bgtile_white.jpg) repeat top center;
+	margin: 10px auto;
+	text-align: left;
+	/*-moz-box-shadow: inset 0 0 10px 1px #000;
+	-webkit-box-shadow: inset 0 0 10px 1px #000;
+	box-shadow: inset 0 0 10px 1px #000;*/
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	color: #fff;
+	padding: 6px 0px;
+	overflow: hidden;
+	position: relative;
+}
+
+#roomwrapper .roommarker:last-child{
+	margin-bottom: 15px !important;
+}
+
+.roommarker{
+	width: 95%;
+	height: 35px;
+	margin: 15px auto 0 auto;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding: 0 10px;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #000;
+	background-color: rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 0 10px 1px #000;
+	-webkit-box-shadow: 0 0 10px 1px #000;
+	box-shadow: 0 0 10px 1px #000;
+	cursor: pointer;
+}
+
+.roomlabel{ 
+	position: absolute;
+	top: 6px;
+	left: 10px;
+	margin: 0;
+	font-size: 1.2em;
+}
+
+#mplobby{ text-align: center;}
+#mplobby h1{ margin-top: 50px; }
+
+/*#mplobby #mp_autostart_timer{
+	display: block;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+	left: 0px;
+	font-size: 11px;
+	font-family: 'Helvetica Neue';
+	margin: 0;
+	padding: 0;
+}
+*/
+#mplobbystart{
+	font-size: 3em;
+	color: #05FF05;
+}
+
+.numplayers{ 
+	text-align: center; 
+	margin: 7px 0 0 0;
+	color: #7c7c7c;
+	font-size: 1em;
+}
+
+#loadinggif{
+	margin-top: 50%;
+}
+
+#loadingtext{
+
+}
+
+.postgameresults{
+	word-wrap: break-word;
+	width: 95%;
+	margin: 0 auto;
+}
+
+.smaller{
+	font-size: 0.8em;
+}
+
+.mpresultsexit{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 40px;
+	cursor: pointer;
+}
+
+
+
+#mptop{
+	background: #000 url(/somanywords/images/resultsgradient.jpg) repeat-x;
+	height: 36px;
+	margin-bottom: 5px;
+}
+
+#mptop img{
+	height: 19px;
+	margin-top: 5px;
+}
+
+#mptop table{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#mptop td{
+	text-align: center;
+}
+
+#mptop td:nth-child(1){ width: 15%; }
+#mptop td:nth-child(2){ width: 39%; text-align: left; padding-left: 8px;}
+#mptop td:nth-child(3){ width: 17%; }
+#mptop td:nth-child(4){ width: 17%; }
+#mptop td:nth-child(5){ width: 12%; }
+
+#mpwinner img{
+	height: 30px;
+	margin-top: 26px;
+}
+
+#mpwinner p{
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma;
+	font-size: 20px;
+}
+
+#mpresults{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-mox-box-sizing: border-box;
+}
+
+#mpresultscontent{
+	background-color: #fff;
+	width: 100%;
+	height: 250px;
+	color: #3f3f3f;
+	overflow: hidden;
+	-moz-box-shadow: inset 0 0 10px 1px #000;
+	-webkit-box-shadow: inset 0 0 10px 1px #000;
+	box-shadow: inset 0 0 10px 1px #000;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+#mpresultscontentscroll{
+	height: 100%;
+	overflow-y: auto;
+}
+
+#mpresultshead{
+	height: 84px;
+}
+
+#mpresultshome p{
+	font-size: 19px;
+	color: #000;
+	font-family: Tahoma;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	line-height: 40px;
+}
+
+#mpresultshome img{
+	height: 25px;
+	cursor: pointer;
+}
+
+#mpresultshome td{
+	text-align: center;
+}
+
+#mpresultshome tr td:nth-child(1){ width: 15%; }
+#mpresultshome tr td:nth-child(2){ width: 39%; text-align: left; padding-left: 5px; }
+#mpresultshome tr td:nth-child(3){ width: 17%; }
+#mpresultshome tr td:nth-child(4){ width: 17%; }
+#mpresultshome tr td:nth-child(5){ width: 12%; }
+
+
+#mpallwords{
+	height: 40px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+#waitingforplayers{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	background-color: rgba(0,0,0,0.75);
+}
+
+.mptoptab p{
+	margin: 0;
+	padding: 0;
+	line-height: 36px;
+	font-family: Tahoma;
+	letter-spacing: 1px;
+	font-size:20px;
+}
+
+#mpresultstabs p{
+	padding: 0 10px;
+	font-size: 15px;
+	line-height: 20px;
+	font-family: verdana;
+	font-weight: bold;
+}
+
+.mpresultstab{
+	padding-bottom: 8px;
+}
+
+.shadowboxtop{
+	width: 100%;
+	position: absolute;
+	top: -1px;
+	height: 1px;
+	left: 0px;
+	-moz-box-shadow: 0 0 8px 2px #000;
+	-webkit-box-shadow: 0 0 8px 2px #000;
+	box-shadow: 0 0 8px 2px #000;
+}
+
+.shadowboxbottom{
+	width: 100%;
+	position: absolute;
+	bottom: -1px;
+	left: 0px;
+	height: 1px;
+	-moz-box-shadow: 0 0 8px 2px #000;
+	-webkit-box-shadow: 0 0 8px 2px #000;
+	box-shadow: 0 0 8px 2px #000;
+}

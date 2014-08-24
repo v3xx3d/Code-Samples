@@ -1,0 +1,11 @@
+body { margin: 0;}
+
+.columns { position: absolute; top: 0px;}
+.rows { position: absolute; left: 0px;}
+
+.box{ position: absolute; background-color: #000; top: 0px; left: 0px;}
+
+.bluebg{ background-image: url(../img/bg_blue.jpg);}
+.redbg{ background-image: url(../img/bg_red.jpg);}
+.yellowbg{ background-image: url(../img/bg_yellow.jpg);}
+.greenbg{ background-image: url(../img/bg_green.jpg);}

@@ -1,0 +1,1 @@
+var curlist = ["ZA","ZABAGLIONE"];

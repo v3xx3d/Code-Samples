@@ -1,0 +1,54 @@
+body{
+	background-color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+#canvas{
+	display: block;
+	margin: 0 auto;
+	outline: 1px solid rgba(255,255,255,0.3);
+}
+
+#wrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: url(../img/bluecursor.png), crosshair;
+
+	/* if i opt to draw a cursor. there's lag issue tho */
+	/*cursor: none;*/
+}
+
+div{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	position: relative;
+	display: block;
+}
+
+#pause{
+	position: absolute;
+	top: -26px;
+	right: -2px;
+	border: 2px solid #1D3958;
+	/*border-left: 2px solid #1D3958;
+	border-right: 2px solid #1D3958;*/
+	color: #fff;
+	padding: 0px 10px;
+	font-weight: bold;
+	cursor: pointer;
+	height: 26px;
+	background-color: #000;
+	-moz-user-select: none;
+  	-webkit-user-select: none;
+  	-ms-user-select: none;
+}
+
+#pause:hover{
+	background-color: #0E1824;
+	color: #fff;
+}

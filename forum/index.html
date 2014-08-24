@@ -1,0 +1,468 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SoManyWords Forum</title>
+
+    
+    <link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/img/icons/icon60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/icon76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/icon120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/icon152.png">
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+      <script src="js/respond.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-49573060-1', 'vexterity.com');
+      ga('send', 'pageview');
+
+    </script>
+
+</head> 
+<body id="page_login">
+
+
+    <!-- /////////////////////////////////////////////////
+                HEADER
+    //////////////////////////////////////////////////////-->
+
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="/"><img src="/img/logo.png" /></a>
+                    <h1>SoManyWords Forum</h1>
+                    <a id="logout" href="/logout"><button type="button" class="btn btn-danger">Logout</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- /////////////////////////////////////////////////
+                NOTIFICATION BOX
+    //////////////////////////////////////////////////////-->
+
+    <div id="notify">
+        <div class="container">
+            <div class="col-sm-12">
+                <!-- <p class="label label-info">This site is SURPRISINGLY STABLE! Now it needs more posts! <span class="glyphicon glyphicon-remove"></span></p> -->
+                <p class="label label-info">Woo! Everything is working! <a class="nav" data-page="changelog">Click here for changelog</a> <span class="glyphicon glyphicon-remove"></span></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- /////////////////////////////////////////////////
+                LOGIN
+    //////////////////////////////////////////////////////-->
+
+    <div id="login" class="page">
+        <div class="container">
+            <div class="col-sm-12">
+                <h3>Login</h3>
+                <hr/>
+
+                <label>Username:</label>
+                <div class="field username">
+                    <input type="text" name="username" autocapitalize="off" autocorrect="off"/>
+                    <p class="label label-danger"></p>
+                </div>
+
+                <label>Password:</label>
+                <div class="field password">
+                    <input type="password" name="password" autocapitalize="off" autocorrect="off"/>
+                    <p class="label label-danger"></p>
+                </div>
+
+                <div class="field server_error">
+                    <p class="label label-danger"></p>
+                </div>
+
+                <button id="login_submit" type="button" class="btn btn-success">Submit</button>
+
+                <p>Don't have an account? <a class="nav" data-page="signup">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- /////////////////////////////////////////////////
+                SIGN UP
+    //////////////////////////////////////////////////////-->
+
+    <div id="signup" class="page">
+        <div class="container">
+            <div class="col-sm-12">
+                <h3>Sign Up</h3>
+                <hr/>
+
+                <label>Desired Username:</label>
+                <div class="field username">
+                    <input type="text" name="username" autocapitalize="off" autocorrect="off"/>
+                    <p class="label label-danger"></p>
+                </div>
+
+                <label>Password:</label>
+                <div class="field password">
+                    <input type="password" name="password" autocapitalize="off" autocorrect="off"/>
+                    <p class="label label-danger"></p>
+                </div>
+
+                <label>Confirm Password:</label>
+                <div class="field confirm_password">
+                    <input type="password" name="confirm_password" autocapitalize="off" autocorrect="off"/>
+                    <p class="label label-danger"></p>
+                </div>
+
+                <label>Email Address:</label>
+                <div class="field email">
+                    <input type="email" name="email" autocapitalize="off" autocorrect="off"/>
+                    <p class="label label-danger"></p>
+                </div>
+
+                <div class="field server_error">
+                    <p class="label label-danger"></p>
+                </div>
+
+                <button id="signup_submit" type="button" class="btn btn-success">Submit</button>
+
+                <a class="nav" data-page="login">Back to login page</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- /////////////////////////////////////////////////
+                CATEGORY LIST
+    //////////////////////////////////////////////////////-->
+
+    <div id="categories" class="page">
+        <div class="container">
+            <div class="col-sm-12">
+                <div id="category_wrap">
+                    <!-- category list goes here -->
+                </div>
+                <a class="nav" data-page="add_category"><h3 class="admin_only add">Add Category <span class="glyphicon glyphicon-plus"></span></h3></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- /////////////////////////////////////////////////
+                ADD CATEGORY
+    //////////////////////////////////////////////////////-->
+
+    <div id="add_category" class="page">
+        <div class="container">
+            <div class="col-sm-12">
+                <h3>Create a category</h3>
+                <hr/>
+
+                <label>Name:</label>
+                <div class="field name">
+                    <input type="text" name="name" />
+                    <p class="label label-danger"></p>
+                </div>
+
+                <label>Description:</label>
+                <div class="field description">
+                    <textarea name="description"></textarea>
+                    <p class="label label-danger"></p>
+                </div>
+
+                <label>Permissions</label>
+                <div class="field permissions">
+                    <select name="permissions">
+                        <option value="0">- Select One -</option>
+                        <option value="admin">Administrators</option>
+                        <option value="tester">Testers</option>
+                        <option value="user">Users</option>
+                    </select>
+                    <p class="label label-danger"></p>
+                </div>
+
+                <div class="field server_error">
+                    <p class="label label-danger"></p>
+                </div>
+
+                <button id="add_category_submit" type="button" class="btn btn-success">Submit</button>
+
+                <a class="nav" data-page="categories">Back to Categories</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- /////////////////////////////////////////////////
+                ADD POST
+    //////////////////////////////////////////////////////-->
+
+    <div id="add_post" class="page">
+        <div class="container">
+            <div class="col-sm-12">
+                <h3>Add a post</h3>
+                <hr/>
+
+                <!-- <label>Type:</label>
+                <div class="field type">
+                    <select name="type">
+                        <option value="0">- Select One -</option>
+                        <option value="normal">Normal Text</option>
+                    </select>
+                    <p class="label label-danger"></p>
+                </div> -->
+
+                 <div class="post_preview">
+                    <div class="reply row">
+                        <div class="post_head_name col-sm-2">
+                            <p id="post_preview_name"><!-- name of poster goes here --></p>
+                        </div>
+                        <div class="post_body_content col-sm-10">
+                            <h1 id="post_preview_subject">
+                                <!-- post subject goes here -->
+                            </h1>
+                            <h6>Post Preview</h6>
+                            <hr/>
+                            <p id="post_preview_content">
+                                <!-- Post preview goes here -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row post_input">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10">
+
+                        <label>Subject:</label>
+                        <div class="field subject">
+                            <input id="post_subject_input" type="text" name="subject" />
+                            <p class="label label-danger"></p>
+                        </div>
+
+                        <div class="post_formatting">
+                            <div class="btn-group">
+                                <button id="tag_b" type="button" class="btn btn-default format_post format_btn"><span class="glyphicon glyphicon-bold"></span></button>
+                                <button id="tag_i" type="button" class="btn btn-default format_post format_btn"><span class="glyphicon glyphicon-italic"></span></button>
+                                <button id="tag_size-16" type="button" class="btn btn-default format_post format_btn"><span class="glyphicon glyphicon-text-height"></span></button>
+
+
+                                <button data-input="post_area" data-pre="post_preview_content" type="button" class="add_image btn btn-success"><span class="glyphicon glyphicon-picture"></span></button>
+                            </div>
+                            
+                        </div>
+                        <div class="post_align">
+
+                            <div class="field content">
+                                <textarea id="post_area" class="user_input" name="content"></textarea>
+                                <p class="label label-danger"></p>
+                            </div>
+
+                            <div class="field server_error">
+                                <p class="label label-danger"></p>
+                            </div>
+                            
+                            <a id="post_cancel"><h6>Cancel</h6></a>
+                            <button id="add_post_submit" data-category="" type="button" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </div>                
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- /////////////////////////////////////////////////
+                POST LIST
+    //////////////////////////////////////////////////////-->
+
+    <div id="post_list" class="page">
+        <div class="container">
+            <div class="col-sm-12">
+                <a class="nav small" data-page="categories">Back to Categories</a>
+                <div id="posts_wrap">
+                    <!-- List of posts goes here -->
+                </div>
+
+                <a class="nav" data-page="add_post"><h3 class="add">Add Post <span class="glyphicon glyphicon-plus"></span></h3></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- /////////////////////////////////////////////////
+                POST
+    //////////////////////////////////////////////////////-->
+
+    <div id="post" class="page">
+        <div class="container">
+            <div class="col-sm-12">
+                <a class="nav small" data-page="post_list">Back to Post List</a>
+                <div id="post_header" class="row">
+                    <!-- Post goes here -->
+                </div>
+                <div id="post_replies" >
+                    <!-- Post replies go here -->
+                </div>
+
+
+                <a id="post_reply_show"><h3>Reply <span class="glyphicon glyphicon-pencil"></span></h3></a>
+
+                <div id="post_reply_box">
+
+                    <div class="post_preview">
+                        <div class="reply row">
+                            <div class="reply_name col-sm-2">
+                                <p class="post_preview_name"></p>
+                            </div>
+                            <div class="reply_content col-sm-10">
+                                <h6>Post Preview</h6>
+                                <hr/>
+                                <p id="reply_preview_content">
+                                    <!-- Reply preview goes here -->
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-10">
+                            <div class="post_formatting">
+                                <div class="btn-group">
+                                    <button id="tag_b" type="button" class="btn btn-default format_reply format_btn"><span class="glyphicon glyphicon-bold"></span></button>
+                                    <button id="tag_i" type="button" class="btn btn-default format_reply format_btn"><span class="glyphicon glyphicon-italic"></span></button>
+                                    <button id="tag_size-16" type="button" class="btn btn-default format_reply format_btn"><span class="glyphicon glyphicon-text-height"></span></button>
+
+
+                                    <button data-input="reply_area" data-pre="reply_preview_content" type="button" class="add_image btn btn-success"><span class="glyphicon glyphicon-picture"></span></button>
+                                </div>
+                                
+                            </div>
+                            <div class="post_align">
+                                <textarea id="reply_area" class="user_input" name="reply_text"></textarea>
+                                <p class="label label-danger"></p>
+                                <a id="post_reply_cancel"><h6>Cancel</h6></a>
+                                <button id="reply_submit" type="button" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- /////////////////////////////////////////////////
+            HIDDEN IMAGE UPLOAD FORM: UNIVERSAL USE
+    //////////////////////////////////////////////////////-->
+
+    <div style="display: none;">
+        <form id="image_upload" method="post" action="/save-image" enctype="multipart/form-data">
+            <input data-input="" id="fileselect" name="file" type="file" accept="image/*" capture="camera"/>
+        </form>
+    </div>
+
+
+
+    <!-- /////////////////////////////////////////////////
+                ADD POST
+    //////////////////////////////////////////////////////-->
+
+    <div id="changelog" class="page">
+        <div class="container">
+            <div class="col-sm-12">
+
+
+                <h3>Change Log <a href="/"><button type="button" class="btn btn-success">Back</button></a></h3>
+                <hr/>
+
+                <div id="changes">
+                    <h2>April 19th, 2014</h2>
+                    <hr/>
+                    <li>Posts are now sorted by most recent activity. Will add actual sorting options later</li>
+                    <li>Categories are sorted alphabetically</li>
+                    <li>A ton of responsive design fixes. Also added a footer with a link to the changelog</li>
+
+                    <h2>April 18th, 2014</h2>
+                    <hr/>
+                    <li>Posts can now be formatted the same as replies</li>
+                    <li>Fixed some issues with images being copied twice</li>
+                    <li>Emoji support on desktop using colon syntax - more on this later</li>
+                    <li>Minor styling fixes</li>
+                </div>
+
+                <a href="/"><button type="button" class="btn btn-success">Back</button></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- /////////////////////////////////////////////////
+                Footer
+    //////////////////////////////////////////////////////-->
+
+
+    <div id="footer">
+        <div class="container">
+            <div class="col-sm-12">
+                <p>SoManyWords by Ant &copy;2014 | <a class="nav" data-page="changelog">ChangeLog</a><p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="js/emoji.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/utilities.js" type="text/javascript"></script>
+    <script src="js/functions.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--/Scripts -->
+
+
+    <!-- <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/nodescripts.js"></script> -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,737 @@
+body{
+	background: #fff;
+}
+
+a{
+	color: #0000ff;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+a:hover{
+	color: #000;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+/* -------------------------------- 
+ 	Site Utility Classes 						
+-------------------------------- */
+
+.admin_only,
+.owner_only{
+	display: none;
+}
+
+.owner .admin_only,
+.admin .admin_only{
+	display: block;
+}
+
+.owner .owner_only{
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- 
+ 	Site Utility Classes 						
+-------------------------------- */
+
+.page{
+	display: none;
+}
+
+.page.active{
+	display: block;
+}
+
+input{
+	display: inline-block;
+	margin-bottom: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+select, textarea{
+	display: inline-block;
+	margin-bottom: 8px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+textarea{
+	vertical-align: middle;
+	padding-left: 5px;
+}
+
+input.error,
+select.error,
+textarea.error{
+	border: 1px solid #d9534f;
+	margin-right: 6px;
+}
+
+p.label-danger{
+	display: none;
+}
+
+input:focus,
+textarea:focus{
+	outline: 2px dashed rgba(0, 124, 209, 0.5);
+}
+
+.glyphicon-plus{
+	color: #5CB85C;
+	font-size: 20px;
+}
+
+.glyphicon-pencil{
+	color: #ffc200;
+	font-size: 20px;
+}
+
+.nav.small{
+	padding: 0px 0px 10px 0px;
+	font-size: 15px;
+}
+
+
+
+
+
+
+
+/* -------------------------------- 
+ 		Header 						
+-------------------------------- */
+
+#header{
+	background: #b2d4ff;
+	-moz-box-shadow: 0px 0px 10px 1px #000;
+	-webkit-box-shadow: 0px 0px 10px 1px #000;
+	box-shadow: 0px 0px 10px 1px #000;
+}
+
+#header img{
+	height: 40px;
+	margin: 10px 0px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#header h1{
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 3px;
+	margin: 0;
+	font-size: 17px;
+}
+
+#header button{
+	font-size: 12px;
+}
+
+#header #logout{
+	text-decoration: none;
+	float: right;
+	margin-top: 16px;
+}
+
+#header #logout:hover,
+#header #logout:visited{
+	color: #000;
+}
+
+#page_login #logout,
+#page_signup #logout{
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+/* -------------------------------- 
+ 		Notification						
+-------------------------------- */
+
+#notify{
+	text-align: center;
+	padding-top: 20px;
+}
+
+#notify p{
+	font-size: 16px;
+	display: inline-block;
+	max-width: 100%;
+	white-space: normal;
+	padding: 8px 15px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	cursor: pointer;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.65);
+}
+
+#notify a.nav,
+#notify a.nav:hover{
+	color: #000;
+	text-shadow: none;
+	font-size: 12px;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+/* -------------------------------- 
+ 		Login 						
+-------------------------------- */
+
+#login{
+
+}
+
+#login p:not(.label){
+	padding-top: 15px;
+}
+
+#login button{
+	display: block;
+}
+
+
+
+
+
+
+
+
+/* -------------------------------- 
+ 		Sign Up					
+-------------------------------- */
+
+#signup{
+
+}
+
+#signup p:not(.label){
+	padding-top: 15px;
+}
+
+#signup label{
+
+}
+
+#signup button{
+	display: block;
+}
+
+#signup a{
+	padding-top: 10px;
+}
+
+
+
+
+
+
+/* -------------------------------- 
+ 		Categories				
+-------------------------------- */
+
+#categories{
+	padding-top: 20px;
+}
+
+#categories .category{
+	border: 2px solid #eee;
+	/*-moz-box-shadow: 0px 0px 10px 1px #000;
+	-webkit-box-shadow: 0px 0px 10px 1px #000;
+	box-shadow: 0px 0px 10px 1px #000;*/
+	margin-bottom: 10px;
+	padding: 15px;
+	cursor: pointer;
+}
+
+#categories .category:hover{
+	background: #E0F3FF;
+}
+
+#categories .category h2{
+	margin-bottom: 5px;
+	margin-top: 0;
+}
+
+#categories .category h6{
+	margin: 0;
+}
+
+#categories .category p{
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+#categories .add{
+	cursor: pointer;
+	color: #333;
+}
+
+#categories .add:hover{
+	color: #333;
+}
+
+
+
+
+
+
+
+
+/* -------------------------------- 
+ 		Add Category				
+-------------------------------- */
+
+#add_category button{
+	display: block;
+}
+
+#add_category .nav{
+	padding-top: 15px;
+}
+
+#add_category textarea{
+	width: 320px;
+	height: 120px;
+}
+
+
+
+
+
+
+
+/* -------------------------------- 
+ 		Add Post				
+-------------------------------- */
+
+#add_post .nav{
+	padding-top: 15px;
+}
+
+
+
+
+
+/* -------------------------------- 
+ 		Post List			
+-------------------------------- */
+
+#post_list{
+	padding-top: 20px;
+}
+
+#post_list .post{
+	border-bottom: 2px solid #eee;
+	border-left: 2px solid #eee;
+	border-right: 2px solid #eee;
+	padding: 5px;
+	cursor: pointer;
+}
+
+#post_list .post:first-child{
+	border-top: 2px solid #eee;
+}
+
+#post_list .post:hover{
+	background: #E0F3FF;
+}
+
+#post_list .post p{
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#post_list .post .subject{
+
+}
+
+#post_list .post .poster{
+	
+}
+
+#post_list .post .replies{
+	
+}
+
+#post_list .post .views{
+	
+}
+
+#post_list .post .last{
+	
+}
+
+#post_list .add{
+	cursor: pointer;
+	color: #333;
+}
+
+#post_list .add:hover{
+	color: #333;
+}
+
+
+
+
+
+
+/* -------------------------------- 
+ 			Post 						
+-------------------------------- */
+
+#post{
+	padding-top: 20px;
+}
+
+#post #post_header{
+	color: #000;
+	border: 2px solid #666;
+	background: #8CBEFF;
+}
+
+#post #post_head_name,
+.post_head_name{
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+#post .reply_name,
+#add_post .reply_name{
+	/*text-align: center;*/
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+#post #post_head_name p,
+#post .replay_name p,
+#post_preview_name{
+	margin: 0;
+}
+
+#post #post_head_content,
+.post_body_content{
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+#post .reply_content,
+#add_post .reply_content{
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+#post .reply_content img,
+#add_post .reply_content img{
+	max-width: 175px;
+}
+
+#post #post_head_content p,
+#post .reply_content p{
+	margin: 0;
+	font-size: 16px;
+}
+
+#post .reply_name p,
+#post #post_head_name,
+#post_preview_name{
+	font-size: 17px;
+	font-weight: bold;
+}
+
+#post #post_head_content h1,
+#add_post #post_preview_subject{
+	font-size: 20px;
+	margin: 0;
+}
+
+#post hr,
+#add_post hr{
+	border-top: 1px solid #000;
+	margin: 4px 0 10px 0;
+}
+
+#post #post_replies{
+	color: #000;
+}
+
+#post #post_replies .reply:nth-child(odd){
+	background: #D3D3D3;
+}
+
+#post .reply{
+	border-left: 2px solid #666;
+	border-right: 2px solid #666;
+	border-bottom: 2px solid #666;
+}
+
+#post #post_reply_show{
+	color: #222;
+}
+
+#post #post_reply_show:hover{
+	color: #222;
+	text-decoration: none;
+}
+
+#post_reply_cancel,
+#post_cancel{
+	color: red;
+}
+
+#post #post_reply_box{
+	display: none;
+	padding: 0px 0 20px 0px;
+}
+
+.post_input textarea,
+#reply_area{
+	width: 100%;
+	height: 120px;
+	display: block;
+}
+
+.post_align button{
+	margin-left: 6px;
+}
+
+.post_align{
+	text-align: right;
+	display: inline-block;
+	width: 100%;
+}
+
+#post h6,
+#add_post h6{
+	margin: 3px 0 0 0;
+	font-size: 10px;
+}
+
+.post_preview{
+	margin-bottom: 20px;
+}
+
+.post_preview .reply{
+	color: #000;
+	background: #8ADF5A;
+	border: 2px dashed rgba(0, 124, 209, 0.5);
+}
+
+.post_preview_content img{
+	width: 175px;
+}
+
+
+/* -------------------------------- 
+ 		Post Formatters 						
+-------------------------------- */
+
+.post_formatting{
+	margin-bottom: 4px;
+}
+
+span.bold{ font-weight: bold; }
+span.italic{ font-style: italic; }
+span.underline{ text-decoration: underline; }
+
+
+
+
+
+
+
+/* -------------------------------- 
+ 		Emoji						
+-------------------------------- */
+
+
+span.emoji {
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	width: 1em;
+	height: 1em;
+	background-size: 1em;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+}
+
+img.emoji {
+	width: 1em;
+	height: 1em;
+}
+
+
+
+
+
+/* -------------------------------- 
+ 		Changelog						
+-------------------------------- */
+
+#changes{
+	padding: 0px 0px 40px;
+}
+
+#changes hr{
+	margin: 0px 0px 10px;
+}
+
+#changes h2{
+	margin: 35px 0px 10px;
+}
+
+
+
+
+
+
+/* -------------------------------- 
+ 		Footer						
+-------------------------------- */
+
+#footer{
+	margin-top: 30px;
+	text-align: center;
+	-moz-box-shadow: 0px 0px 10px 0px #000;
+	-webkit-box-shadow: 0px 0px 10px 0px #000;
+	box-shadow: 0px 0px 10px 0px #000;
+	padding: 10px 0px;
+	background: #b2d4ff;
+}
+
+#footer p{
+	margin: 0;
+}
+
+
+
+
+
+
+
+
+
+/* RESPONSIVENESS */
+
+@media(min-width:1200px){
+
+}
+
+@media( min-width: 991px ) and (max-width: 1199px){
+
+}
+
+@media (min-width: 875px){
+	
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+
+}
+
+@media (min-width: 420px){
+	
+}
+
+@media (min-width: 480px) and (max-width: 767px){
+	
+}
+
+@media (min-width: 992px){
+	
+}
+
+@media (min-width: 480px){
+	
+}
+
+@media (max-width: 767px){
+
+}
+
+@media (min-width: 400px) and (max-width: 767px){
+	#header img{
+		height: 40px;
+		margin: 10px 0px;
+	}
+
+	#header h1{
+		padding-left: 15px;
+		font-size: 20px;
+	}
+
+	#header button{
+		font-size: 12px;
+	}
+
+	#header #logout{
+		margin-top: 15px;
+	}
+}
+
+@media (min-width: 768px){
+	#header img{
+		height: 60px;
+		margin: 10px 0px;
+	}
+
+	#header h1{
+		padding-left: 15px;
+		font-size: 31px;
+	}
+
+	#header #logout{
+		margin-top: 23px;
+	}
+
+	#header button{
+		font-size: 14px;
+	}
+}
+
+
+
+
+
+

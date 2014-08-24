@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Tanks</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/game_client.js"></script>
+
+	<script>
+
+		if( window.location.hostname != 'localhost' ){
+	   		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	   		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	   		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	   		ga('create', 'UA-48252751-1', 'vexterity.com');
+	   		ga('send', 'pageview');
+	   	}
+
+	</script>
+	
+</head>
+<body>
+	<div id="wrap">
+		<canvas id="viewport"></canvas>
+	</div>
+	
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="js/io.js"/></script>
+	
+	<script type="text/javascript" src="js/__tanks.js"></script>
+	<script type="text/javascript" src="js/__turrets.js"></script>
+	<script type="text/javascript" src="js/__treads.js"></script>
+
+	<script type="text/javascript" src="js/game_core.js"></script>
+	<script type="text/javascript" src="js/stages.js"></script>
+	<script type="text/javascript" src="js/tanks.js"></script>
+	<script type="text/javascript" src="js/projectiles.js"></script>
+	<script type="text/javascript" src="js/mouse.js"></script>
+	<script type="text/javascript" src="js/keyboard.js"></script>
+
+</body>
+</html>

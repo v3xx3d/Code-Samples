@@ -1,0 +1,236 @@
+body{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-family: 'Cabin', 'Helvetica Neue', Arial, sans-serif;
+	color: #fff;
+}
+
+
+#bg_wrap{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 60px;
+	background: transparent url(../img/bg.png) no-repeat top left;
+	background-size: cover;
+	z-index: -1;
+}
+
+#content{
+	text-align: center;
+}
+
+#logo{
+	margin-top: 10%;
+	max-width: 80%;
+	width: 580px;
+}
+
+#content h1{
+	font-size: 90px;
+	margin: 0;
+}
+
+#content h2{
+	font-size: 56px;
+	font-weight: 700;
+	margin: 0;
+}
+
+#content p{
+	font-size: 26px;
+	margin-top: 5%;
+	color: #BFBEDA;
+}
+
+#content h3{
+	font-size: 55px;
+	font-weight: 700;
+	color: #BFBEDA;
+	margin-top: 8%;
+}
+
+#content hr{
+	border-color: #BFBEDA;
+}
+
+#content h4{
+	font-size: 16px;
+	font-weight: 700;
+	color: #bfbeda;
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+
+
+
+
+#footer{
+	background: transparent url(../img/footer_bg.png) repeat top center;
+	margin-top: 60px;
+}
+
+#footer p{
+	color: #fff;
+	line-height: 30px;
+	margin: 0;
+	font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+#form input[type=text],
+#form select,
+#form textarea{
+	width: 90%;
+	border: 1px solid #fff;
+	font-size: 23px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-bottom: 45px;
+	padding-left: 10px;
+	padding-right: 10px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background-color: transparent;
+	color: #fff;
+}
+
+#form input[type=text],
+#form select{
+	line-height: 50px;
+	height: 50px;
+}
+
+#form img{
+	width: 375px;
+	max-width: 90%;
+	cursor: pointer;
+}
+
+::-webkit-input-placeholder { color: #fff; font-size: 17px; }
+::-moz-placeholder { color: #fff; font-size: 17px; }
+:-ms-input-placeholder { color: #fff; font-size: 17px; }
+input:-moz-placeholder { color: #fff; font-size: 17px; }
+
+
+
+
+
+@media( min-width: 621px ) and ( max-width: 767px ){
+	#content h1{
+		font-size: 73px;
+		margin: 0;
+	}
+
+	#content h2{
+		font-size: 46px;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	#content p{
+		font-size: 23px;
+		margin-top: 5%;
+		color: #BFBEDA;
+	}
+
+	#content h3{
+		font-size: 45px;
+		font-weight: 700;
+		color: #BFBEDA;
+		margin-top: 8%;
+	}
+
+	#form input[type=text],
+	#form select,
+	#form textarea{
+		margin-bottom: 37px;
+	}
+}
+
+@media( min-width: 491px) and ( max-width: 620px ){
+	#content h1{
+		font-size: 56px;
+		margin: 0;
+	}
+
+	#content h2{
+		font-size: 35px;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	#content p{
+		font-size: 19px;
+		margin-top: 5%;
+		color: #BFBEDA;
+	}
+
+	#content h3{
+		font-size: 40px;
+		font-weight: 700;
+		color: #BFBEDA;
+		margin-top: 8%;
+	}
+
+	#content h4{
+		padding-left: 10%;
+		padding-right: 10%;
+		margin-bottom: 6%;
+	}
+
+	#form input[type=text],
+	#form select,
+	#form textarea{
+		margin-bottom: 32px;
+	}
+}
+
+@media( max-width: 490px ){
+	#content h1{
+		font-size: 44px;
+		margin: 0;
+	}
+
+	#content h2{
+		font-size: 28px;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	#content p{
+		font-size: 13px;
+		margin-top: 5%;
+		color: #BFBEDA;
+	}
+
+	#content h3{
+		font-size: 33px;
+		font-weight: 700;
+		color: #BFBEDA;
+		margin-top: 8%;
+	}
+
+	#content h4{
+		padding-left: 10%;
+		padding-right: 10%;
+		margin-bottom: 6%;
+	}
+
+	#form input[type=text],
+	#form select,
+	#form textarea{
+		margin-bottom: 27px;
+	}
+}

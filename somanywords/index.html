@@ -1,0 +1,879 @@
+
+<html>
+<head>
+	<title>SoManyWords</title>
+	
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport' />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="/somanywords/images/apple-touch-icon.png" />
+	
+	<!-- Oversized -->
+	<link rel="apple-touch-icon" sizes="256x256" href="/somanywords/images/apple-touch-icon-iphone.png" />
+	<!-- Standard iPhone --> 
+	<link rel="apple-touch-icon" sizes="57x57" href="/somanywords/images/apple-touch-icon-iphone.png" />
+	<!-- Retina iPhone --> 
+	<link rel="apple-touch-icon" sizes="114x114" href="/somanywords/images/apple-touch-icon-iphone.png" />
+	<!-- Standard iPad --> 
+	<link rel="apple-touch-icon" sizes="72x72" href="/somanywords/images/apple-touch-icon-iphone.png" />
+	<!-- Retina iPad --> 
+	<link rel="apple-touch-icon" sizes="144x144" href="/somanywords/images/apple-touch-icon-iphone.png" />
+		
+	<link rel="stylesheet" type="text/css" href="/somanywords/style.css"/>
+	<link rel="stylesheet" type="text/css" href="/somanywords/rooms.css"/>
+	<script type="text/javascript" src="/somanywords/jquery.js"></script>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-48252751-1', 'vexterity.com');
+	  ga('send', 'pageview');
+
+	</script>
+	
+</head>
+
+<body>
+
+	<!-- IMAGE PRE-LOADER -->
+	<div style="display:none;">
+		<script type="text/javascript">
+			<!--//--><![CDATA[//><!--
+				var images = new Array()
+				function preload() {
+					for (i = 0; i < preload.arguments.length; i++) {
+						images[i] = new Image()
+						images[i].src = preload.arguments[i]
+					}
+				}
+				preload(
+					"http://vexterity.com/somanywords/images/smw2.png",
+					"http://vexterity.com/somanywords/images/alphabet.png",
+					"http://vexterity.com/somanywords/images/bgtile1.jpg"
+				)
+			//--><!]]>
+		</script>
+	</div>
+
+
+
+	<div id="bodywrap">
+		<div id="gamewrap">
+			<!-- <div id="game"> -->
+				
+				<!-- MULTIPLAYER LOBBY - WAITING TO FIND PLAYERS -->
+				<div id="mplobby" style="display:none;">
+					<img id="hgetready" class="himages" src="/somanywords/images/getready.png" />
+					<p id="mplobbystatus">waiting for more players...</p>
+					<p id="mplobbystart" style="display: none;">123</p>
+					<div id="mpreadyplayers">
+						<p class="mpplayerready"></p>
+					</div>
+					
+					<img id="mplobbyexit" src="/somanywords/images/exit.png" />
+					<div class="viewusers"><p class="viewuserstext">u</p></div>
+
+					<!-- <h6 id="mp_autostart_timer" style="display: none;">Auto-Start Timer <span>30</span></h6> -->
+				</div>
+				
+
+				<!-- MULTIPLAYER RESULTS -->
+				<div id="mpresults" style="display:none;">
+
+					<div id="mpresultshead">
+						<div id="mpwinner">
+							<img src="/somanywords/images/results2.png" />
+							<!-- <p><img src="/somanywords/images/crown.png" />Elpedro18<img src="/somanywords/images/crown.png" /></p> -->
+						</div>
+						<div class="miniboard">
+							<table>
+								<tr><td class="mbcells mb_cell0"><p>A</p></td><td class="mbcells mb_cell1"><p>A</p></td><td class="mbcells mb_cell2"><p>A</p></td><td class="mbcells mb_cell3"><p>A</p></td></tr>
+								<tr><td class="mbcells mb_cell4"><p>A</p></td><td class="mbcells mb_cell5"><p>A</p></td><td class="mbcells mb_cell6"><p>A</p></td><td class="mbcells mb_cell7"><p>A</p></td></tr>
+								<tr><td class="mbcells mb_cell8"><p>A</p></td><td class="mbcells mb_cell9"><p>A</p></td><td class="mbcells mb_cell10"><p>A</p></td><td class="mbcells mb_cell11"><p>A</p></td></tr>
+								<tr><td class="mbcells mb_cell12"><p>A</p></td><td class="mbcells mb_cell13"><p>A</p></td><td class="mbcells mb_cell14"><p>A</p></td><td class="mbcells mb_cell15"><p>A</p></td></tr>
+							</table>
+						</div>
+						<img class="mpresultsexit" src="/somanywords/images/exit.png" />
+					</div>
+
+					<div id="mptop">
+						<div id="mptop_home">
+							<table><tr>
+								<td><img src="/somanywords/images/mpr_place.png" /></td>
+								<td><img src="/somanywords/images/mpr_name.png" /></td>
+								<td><img src="/somanywords/images/mpr_words.png" /></td>
+								<td><img src="/somanywords/images/mpr_score.png" /></td>
+								<td></td>
+							</tr></table>
+						</div>
+
+						<div id="mptop_tabs" style="display: none;">
+							
+						</div>
+					</div>
+
+					<div id="mpresultscontent">
+						<div id="mpresultscontentscroll" class="scrollpls">
+							<div id="mpresultshome">
+								<table id="mpresultssummary">
+									<tr><td><p>1st</p></td><td><p>elpedro18</p></td><td><p>113</p></td><td><p>110</p></td><td><img src="/somanywords/images/circlearrow.png" /></td></tr>
+									<tr><td><p>2nd</p></td><td><p>kwayzedave</p></td><td><p>45</p></td><td><p>40</p></td><td><img src="/somanywords/images/circlearrow.png" /></td></tr>
+									<tr><td><p>3rd</p></td><td><p>courgette</p></td><td><p>88</p></td><td><p>37</p></td><td><img src="/somanywords/images/circlearrow.png" /></td></tr>
+									<tr><td><p>4th</p></td><td><p>mont</p></td><td><p>135</p></td><td><p>15</p></td><td><img src="/somanywords/images/circlearrow.png" /></td></tr>
+									<tr><td><p>5th</p></td><td><p>aja</p></td><td><p>100</p></td><td><p>12</p></td><td><img src="/somanywords/images/circlearrow.png" /></td></tr>
+								</table>
+							</div>
+							<div id="mpresultstabs" style="display: none;">
+							</div>
+						</div>
+					</div>
+					<img id="mpallwords" src="/somanywords/images/allpossiblewords.png" />
+
+					<div id="waitingforplayers" style="display: none;">
+						<img id="loadinggif" src="/somanywords/images/loading.gif"/>
+						<p id="waitingforplayersstatus">waiting for players to finish...</p>
+						<img class="mpresultsexit" src="/somanywords/images/exit.png" />
+					</div>
+				</div>
+
+				
+
+
+				<!-- SINGLE PLAYER RESULTS -->
+				<div id="spresults" style="display: none;">
+					<div id="resultslogo">
+						<img src="/somanywords/images/results2.png" />
+					</div>
+					<div id="sptop">
+						<table><tr>
+							<td><img src="/somanywords/images/wordcount-mini.png" /></td>
+							<td id="spwordcount">0</td>
+							<td><img src="/somanywords/images/score-mini.png" /></td>
+							<td id="spscore">0</td>
+						</tr></table>
+					</div>
+					<div id="spwordlist">
+						<div id="spwordlistscroll" class="scrollpls">
+						</div>
+					</div>
+					<img id="spallwords" src="/somanywords/images/allpossiblewords.png" />
+					<img id="spresultsexit" src="/somanywords/images/exit.png" />
+					<div class="miniboard">
+						<table>
+							<tr><td class="mbcells mb_cell0"><p>A</p></td><td class="mbcells mb_cell1"><p>A</p></td><td class="mbcells mb_cell2"><p>A</p></td><td class="mbcells mb_cell3"><p>A</p></td></tr>
+							<tr><td class="mbcells mb_cell4"><p>A</p></td><td class="mbcells mb_cell5"><p>A</p></td><td class="mbcells mb_cell6"><p>A</p></td><td class="mbcells mb_cell7"><p>A</p></td></tr>
+							<tr><td class="mbcells mb_cell8"><p>A</p></td><td class="mbcells mb_cell9"><p>A</p></td><td class="mbcells mb_cell10"><p>A</p></td><td class="mbcells mb_cell11"><p>A</p></td></tr>
+							<tr><td class="mbcells mb_cell12"><p>A</p></td><td class="mbcells mb_cell13"><p>A</p></td><td class="mbcells mb_cell14"><p>A</p></td><td class="mbcells mb_cell15"><p>A</p></td></tr>
+						</table>
+					</div>
+				</div>
+
+
+				<!-- POP UP FOR FULL WORD LIST -->
+				<div id="fullwordlistpopwrap" style="display: none;">
+					<div id="fullwordlistpop">
+						
+						<div id="fullwordlistpopinner" class="scrollpls">
+							<p id="fullwordlist"></p>
+						</div>
+					</div>
+					<img id="fullwordlistexit" src="/somanywords/images/exit_x.png" />
+				</div>
+				
+
+				<!-- THE ACTUAL GAME -->
+				<div id="gameboard" style="display:none;">
+				
+					<div id="statsoverlay" style="display:none;">
+						<p class="score">Score: 0</p>
+						<p class="wordcount">Words: 0</p>
+					</div>
+					
+					<div id="statsoverlaymobile" style="display: none;">
+						<p class="score">Score: 0</p><p class="wordcount">Words: 0</p>
+					</div>
+					
+					<div id="timeleft" >
+						<p class="timer">3:00</p>
+					</div>
+					
+					<div id="timeleftmobile" >
+						<p class="timer">3:00</p>
+					</div>
+					
+					<div id="tablewrap">
+						
+						<table id="gametable">
+							
+						</table>
+					</div>
+
+					
+					<input type="text" id="curword" value="" />
+					<img id="gameexit" src="/somanywords/images/exit.png" />
+					<img id="dcgameexit" src="/somanywords/images/exit.png" />
+					<img id="mpgameexit" src="/somanywords/images/exit.png" />
+				</div>
+				
+
+				<!-- ONLINE MULTIPLAYER HOME -->
+				<div id="gamelobby" style="display: none;">
+					<img id="hsmw" src="/somanywords/images/smw2.png" />
+					<button id="dailybutton">Daily</button>
+					<button id="joinchat">Chat</button>
+					<button id="lbpop">Leaderboard</button>
+					
+					<div id="roomwrapper">
+						<div class="shadowboxtop"></div>
+						<!--<div id="roomA" class="roommarker"><p class="roomlabel">ROOM A</p><button id="joinroomA" class="roomjoinbutton">join</button></div>-->
+						<div class="shadowboxbottom"></div>
+					</div>
+					
+					<div id="notificationbox">
+						<div id="notificationboxwrap">
+							<div id="notificationboxscroll" class="scrollpls">
+								<div id="notifyboxenlarge"><p>News and stuff (click me)</p></div>
+
+								<p><span>8/20</span></p>
+								<li>Started automatic playercount timers. Should be up and running soon!</li>
+
+								<p><span>8/14</span></p>
+								<li>Fixed it so the status bar shows now. This wasn't a problem until iOS 7 but it's been bugging me :]</li>
+
+								<br/><br/>
+
+								<li style="color: green; text-align: center; list-style: none;">DONATIONS TO HELP FUND SoManyWords iOS! :D</li>
+
+								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+								<input type="hidden" name="cmd" value="_donations">
+								<input type="hidden" name="business" value="MAU83TYQQ3Q6U">
+								<input type="hidden" name="lc" value="US">
+								<input type="hidden" name="item_name" value="So Many Words iOS App">
+								<input type="hidden" name="item_number" value="001">
+								<input type="hidden" name="currency_code" value="USD">
+								<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHosted">
+								<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
+
+								
+								<li>If anyone wants to be a beta tester, has any questions, or anything please email me at vexteritydev@gmail.com I'll be happy to respond! Even if it's just to say hi.</li>
+
+								<!-- <p><span>7/12</span></p>
+								<li>fixed a problem with the "other random stats" section of the new stats. (thanks aja + vlad) :]</li>
+								<p><span>7/12</span></p>
+								<li>new way more interesting statistics</li>
+								<p><span>7/11</span></p>
+								<li>leaderboard is now clickable</li>
+								<li> ^ there is a delay due to how much data is transferred post-click but it's minimal.</li>
+								<p><span>6/5</span></p>
+								<li>Ordered the words in the previous daily popups and also edited the styling to make them a bit easier to read</li>
+								<li>Added word cancelling to previous daily popups</li>
+								<li>Added usernames to previous daily popups</li>
+								<li>obviously added the previous daily popups</li>
+								<p><span>5/6</span></p>
+								<li>added previous dailies. not very elegant. but it works. also put in most of the code needed to display each persons previous word list and compare to yours. still needs work so commented it out for now.</li>
+								<p><span>4/29</span></p>
+								<li>added blackout boxes to the daily leaderboards. a feature i was meaning to add a while back. not everyone likes to see the stats before they play :)</li>
+								<li> ^ will add an option later that will be attached to your account and allow for you to turn that off</li>
+								<p><span>4/29</span></p>
+								<li>fixed the buttons on the daily pages. "find me" and "refresh" now work properly</li>
+								<li>gonna work on making the 5x5 more responsive</li>
+								<p><span>4/2</span></p>
+								<li>ok, so i reverted back to a single server. for reasons beyond my own explanation it was a lot faster. trying to figure out why. but in the meantime i guess it will be fine since we don't get much traffic</li>
+								<p><span>4/1</span></p>
+								<li>the server will now automatically backup the entire database every night at midnight!</li>
+								<li>i uninstalled the bad version of socket.io and reinstalled the proper one, hopefully solving the new connection skipping issues.</li>
+								<li>i came to the realization today that, since i split the server apart and it no longer serves the static files, i can now use Express for the web bit. I'm going to try to get this working today and get it playing well with socket.io</li>
+								<li>Express will allow for cookies (the thing that will allow auto-login) and better session management (i.e. if your connection keeps skipping in and out it will still hold onto your information) which will resolve 99% of the current server crashes.</li>
+								<p><span>3/30</span></p>
+								<li>The app is now seperate from the static file server. SUCCESS!!! This means that when people are loading the app there will be no pause while those files are being served. I may have been the only one to notice it but it was there.</li>
+								<li>it actually loads a bit faster and i'm hoping it will resolve the issues with the wrong images being served up, although that's just wishful thinking</li>
+								<p><span>3/29</span></p>
+								<li>after much anticipation, the server has now been migrated to the new computer!</li>
+								<li>^ starting up the server now takes less than 2 seconds compared to the 10 it took before!</li>
+								<li>tomorrow i will begin trying to separate the static file server and the actual game itself. these to things should have never been joined to begin with and can cause MAJOR lag issues</li>
+								<p><span>3/25</span></p>
+								<li>FINALLY got the new computer hooked up again with parts that ARE NOT faulty. lol. running nice and quiet. lots of things will be changing very soon but it will be a process. bear(bare?) with me</li>
+								<li>added "users" button to pre-game lobby so you know if people are online while you wait. also moved and styled the exit button on those pages.</li>
+								<li>tweaked the shadows and spacing in the main mp lobby.</li>
+								<li>tweaked the button layout in the main mp lobby. squished all the stuff up top. trying to make room for future things: messages, forum, options/profile, email-the-dev. stuff that will all slowly make it's appearance here in our little smw community.</li>
+								<p><span>3/24</span></p>
+								<li>fixed the timestamps 100% (as far as i can tell)</li>
+								<li>did a little work on vexterity.com itself. i need to find another website to model after. I think i'm going to scrap the design altogther. This site will be a hub for all the projects I work on as well as being a portal to so many words.</li>
+								<p><span>3/22</span></p>
+								<li>added timestamps to the chat :) seems to adjust properly to local time.. tested vegas time.</li>
+								<p><span>3/19</span></p>
+								<li>added the "Users()" buttons to the leaderboard page,"My Stats" page, and the dailies so you can always tell if someone is online while you wait</li>
+								<li>the entire room "boxes" are now clickable to join instead of being just the "join" buttons.</li>
+								<li>Good News! my power supply is on it's way back from the manufacturer. Guessing it'll be here monday or tuesday! Once I have it big renovations will happen.. hopefully meaning an increase in speed and a decrease in image swap issues and connections dropping.</li>
+								<li>also i keep working on the interface as a whole. just waiting til i find something that is like ***BOOM*** perfect. lol.</li>
+								<p><span>3/15</span></p>
+								<li>Just a few UI tweaks. nothing major to report. Most of the hardcore work I'm going to do will come after I get the defective power supply back for my new server computer.</li>
+								<p><span>3/10</span></p>
+								<li>5x5 NOW ONLY ACCEPTS 4-LETTER WORDS.</li>
+								<li>3x3 IS NOW 1:30 INSTEAD OF 2 MINUTES.</li>
+								<li>finished styling chat. now i just need to figure something out for the leaderboards and main lobby. i'm a very slow designer. haha</li>
+								<p><span>3/10</span></p>
+								<li>more design stuff.</li>
+								<p><span>3/9</span></p>
+								<li>normalizing some of the design elements. Planning on revamping everything except the results screens.</li>
+								<p><span>3/8 more stuff </span></p>
+								<li>added a popup to tell you if you lose connection. popup will automatically disappear when the connection is re-established. Let me know in the chat when and where you see this.</li>
+								<li>Trying to figure out why and where we are losing connections.</li>
+								<p><span>3/8 IMPORTANT!</span></p>
+								<li>IF YOU ARE PLAYING IN THE BROWSER PLEASE BE SURE TO COMPLETELY EXIT THE APP/BROWSER BEFORE YOU TRY TO PLAY THE DAILY! or you will crash the server like mason did. lol</li>
+								<li>after that feel free to TRY THE NEW DAILIES!... i haven't had a chance to try the 5x5 but should work in theory. lol.</li>
+								<li>after playing the 3x3. gonna change the time to 2 minutes i think</li>
+								<p><span>3/8</span></p>
+								<li>woot! almost got it! everything is in place and different sized dc's are already being generated. only a couple small things I have left to change and 3x3 and 5x5 should be purring like a kitten!</li>
+								<li>4x4 still works just fine! so please still play that one! i'll have the others done tomorrow probably around noon EST so check back after that to play the new ones!</li>
+								<p><span>3/7</span></p>
+								<li>also. i tested 5x5. works great! next step is to prepare the server code to accept and build 5x5 boards as well as creating a new database collection for 5x5 daily stats. Then the final step will be to refactor the DP lobby to include the new size/sizes ;) on schedule for friday!</li>
+								<li>Changing the core code in anything can cause unforseen issues in older devices. So if there are any new problems all of a sudden please let me know!</li>
+								<li>prepared the core game code to support any dimension board I throw at it 4x4 5x4.... 6x6??? O.O</li>
+								<p><span>3/6</span></p>
+								<li>prepared game board design to scale to whatever dimension board I throw at it</li>
+								<p><span>2/28</span></p>
+								<li>GOING ON VACATION :D I'm leaving here in a few minutes and will be gone until sunday. Please email me at VEXTERITYDEV@GMAIL.COM if the game crashes or crazy new things start happening. I will still stop in to say hello a couple times a day and I will make sure the server doesn't stay down long in the event of a crash. Thanks for playing and stick around because I have more ideas to fix all the problems we've been having!</li>
+								<p><span>2/22</span></p>
+								<li>the "all possible words" popup now color codes all the words to each individual player. and slashes out duplicate words. looks neat </li>
+								<li>finished styling the results screens. still need to add some logic to control words being slashed out when viewing individual word summaries</li>
+								<p><span>2/21</span></p>
+								<li>New multiplayer results! its only about 3/4 done but i'm really tired. I'll finish the rest of the code tomorrow :)</li>
+								<p><span>2/18</span></p>
+								<li>On saturday I completely ripped my new desktop apart and put it back together. I found some faulty wiring in the components that are built into the case. I fixed it and the computer has been up and running ever since. NO CRASHES!</li>
+								<li>^ I'll be migrating everything over as soon as I run a ethernet cable to my router. Should be sometime this week. There will be probably an hour or so of down-time. I will warn everyone ahead of time. And afterward there should be significant performance increases</li>
+								<p><span>2/17</span></p>
+								<li>Added an "X" to the popups so they can be exited on older devices</li>
+								<li>Added a mini version of the board played to the single player results screen</li>
+								<li>This morning I found that the module for I/O i was using was part of the cause of connections randomly dropping. I upgraded to a newer version that had a fix. This is not going to solve all of the connection issues but it's definitely going to help!</li>
+								<p><span>2/16</span></p>
+								<li>YOU CAN NOW "VIEW ALL WORDS" IN SINGLE PLAYER MODE :D - I recommend eveyone trying it!</li>
+								<li>single player now has fancy new results screen! There's actually a reason to play it now! :D</li>
+								<li>next step is to do something similar for multiplayer</li>
+								<p><span>2/11</span></p>
+								<li>Today I tore out a bunch of code, rewrote it, and put it back. None of this solved the older issues, but paved the way to do so.</li>
+								<li>My new server computer has been running nonstop for about 24 hours now. Gonna give it another day or so before I start migrating things over</li>
+								<li>^ what this means... Server side code will load and run about 10x faster. Believe it or not (it's actually quite believable) the game right now is running on an Acer laptop that's about 6 years old. I have to set the damn thing on it's side just so it won't overheat and shut off. AND, it has a huge line of white pixels down the center of the screen. LOL. NOT the optimal server computer</li>
+								<li>.. the new computer is running a hefty i7 quad-core 3.4ghz processor with 16 gigs of ram. Every aspect of the game should see a performance boost :)</li>
+								<p><span>2/8</span></p>
+								<li>Finished the code that will find all possible words on a board</li>
+								<li>This weekend i hope to completely build out the post game results for multiplayer and single player</li>
+								<p><span>2/7</span></p>
+								<li>Working on code to compute all possible words.</li>
+								<p><span>2/6</span></p>
+								<li>I'm going to be editing a lot of server code over the next couple days. Let me know if you have any issues!</li>
+								<li>Added a timeout of 1/2 second to the "Join Room" buttons in hopes that will prevent joining twice and playing yourself.</li>
+								<p><span>2/5</span></p>
+								<li>fixed the issue with usernames not showing up on game start O.o dumb mistake i made</li>
+								<li>This weekend I will be migrating all the server stuff to a more powerful, less accident-prone, server computer.</li>
+								<li>Found a bug in the leaderboard script. when i optimized it i misspelled something. leaderboards will once again update automatically. right in front of your eyes :D</li>
+								<p><span>2/4</span></p>
+								<li>whipped up a new testing page where i can test client side code without breaking stuff for you guys</li>
+								<li>if you dont wanna read past this... the short version: I'm trying something new. It may work and prevent all the crashing :D</li>
+								<li>the long version: so i decided to test something. storing the dictionary in 26 seperate arrays. cuts the size of the game to 10mb compared to the 30mb js object</li>
+								<li>in all reality if i can write a proper binary search algorithm for the arrays i think lookup time will be sufficient enough for our game.</li>
+								<li>this is a terrible realization because i spent so much time working on a Trie (its a type of tree storage) dictionary store, although i guess that won't go completely to waste because I use it to store everyone's word history</li>
+								<li>I'm going to implement this later in my testing platform and see if drastically affects lookup times, if not. i may have found a solution to all the memory problems</li>
+								<p><span>2/3</span></p>
+								<li>Fixed styling on daily challenge leaderboard</li>
+								<li>Also, in the event of a tie score, players will now recieve the same # for the daily</li>
+								<p><span>2/1</span></p>
+								<li>Leaderboard is now 'Live'. It will instantly update after playing.</li>
+								<li>^ if you watch the leaderboard as a game finishes you will see it change :D</li>
+								<li>^ i actually opened 3 instances of the game just to test this. it's very cool</li>
+								<p><span>1/31</span></p>
+								<li>replaced wins with total games played on the leaderboard. i think it makes more sense for now.</li>
+								<p><span>1/30</span></p>
+								<li>Leaderboard :D</li>
+								<p><span>1/29</span></p>
+								<li>not much new today :/ my server computer crashed hard and found a problem with loading certain files on the ipad.</li>
+								<li>gonna start working on the leaderboard again tomorrow. as well as scanning my server code for things i can rearrange to minimize issues</li>
+								<p><span>1/28</span></p>
+								<li>Started the structure of the leaderboard. I'll probably have something to show for it tomorrow</li>
+								<li>Load times are improved slightly and will be even faster once I implement caching (some files will no longer be downloaded from me, instead stored on your phone). Probably a tomorrow thing as well</li>
+								<li>I implemented a different methodology in loading the game dictionary. It is pre-built and loaded as a compressed object. Although this object is still the same size when uncompressed. The size of the files themselves go from 2mb down to 0.3mb which is significant and saves me a lot of bandwidth</li>
+								<li>Slide-To-Select now working 100%, the ratios for the bounding boxes all seem good. May need some tweaking but I'm VERY VERY impressed with how well it turned out</li>
+								<p><span>1/27</span></p>
+								<li>i fixed all the issues i was having yesterday with the board being styled</li>
+								<li>i was forced to embed the letters in the buttons, so the font has changed. looks tacky but i'll work on that later</li>
+								<li>slide-to-select now works, but it's not very intelligent. the diagonal selection is garbage. gonna work on this tomorrow</li>
+								<li>for those of you that tap instead of slide. you have about a 40 pixel margin of error before slide-to-select kicks in. so far in my tests this seems sufficient.</li>
+								<p><span>1/25</span></p>
+								<li>your personal stats will now update after every round</li>
+								<li>beginning to think about how to build a leaderboard</li>
+								<li>been working on a new solution with a compressed library. should cut load times in half</li>
+								<p><span>1/24</span></p>
+								<li>stats now all work properly! and they are displayed apon login!</li>
+								<li>1 problem: you have to sign out and sign back in for the stats to update</li>
+								<li>PLAY SO WE CAN GET SOME STATS BUILT UP!!!!</li>
+								<p><span>1/23</span></p>
+								<li>stats can now properly be stored in the database!!!! this was tested with 4 different users! although, there is 1 problem. I'm trying to store a very complex object and the database won't accept it. This object is going to be key to providing stats above and beyond what others have provided. I'm going to ask around while i'm at work tomorrow and figure this out. It's the last piect to this complex puzzle!</li>
+								<p><span>1/21</span></p>
+								<li>the code for calculating and storing stats is now at 99%. i tried it locally and it worked AMAZINGLY! but when i tried to implement it on the server i ran into a snag with a major scoping issue. don't have the brainpower to figure it out tonight. </li>
+								<p><span>1/20</span></p>
+								<li>Wrote a big long function to normalize everyone's stats on login. Also wrote about 85% of the code involed in tracking stats. Tomorrow i will try to finish it and get it implemented. I apologize again for the wait, but i decided to track a crazy amount of stats and I think it will make everyone happy!</li>
+								<p><span>1/19</span></p>
+								<li>A lot happened today. with ajas help i fixed about 3 more bugs.</li>
+								<li>gonna finish up the code tonight that will make stats work, i'm gonna test it in the morning and hopefully have it running full force tomorrow before the Ravens/Patriots game :)</li>
+								<li>it's a good thing i make my own deadlines. lol.</li>
+								<p><span>1/18</span></p>
+								<li>added expand button for this news thing here</li>
+								<li>found and fixed another error: when leaving a room it was also removing players from completed games O.o</li>
+								<li>fixed the error with entire stats being duplicated.</li>
+								<li>new error. scores not posting to the proper user after being calculated. i figured out why but haven't figured out how to fix it.</li>
+								<li>uhh. i think i fixed ^that error. i need to do some more testing. everything should work fine now.</li>
+								<p><span>1/17</span></p>
+								<li>duplicate words are now indicated in the 'results' screen and they are not counted in your score</li>
+								<li>i managed to break something because ppl show up twice in the results sometimes :/ </li>
+								<p><span>1/16</span></p>
+								<li>finished writing the code that will remove words found by multiple people!</li>
+								<li>tomorrow i will test the heck out of that code. Once everything seems good i'll turn the stats on!</li>
+								<p><span>1/15</span></p>
+								<li>writing algorithm to handle eliminating duplicate words. RACKING MY BRAIN LIKE YOU WOULDN'T BELIEVE</li>
+								<li>fixed bug that allowed users to play themselves: if you disconnect from the app while in a room, it now disconnects you from the room as well.</li>
+								<li>that's 3 major bugs down. 1 to go. need to find why my mom was able to appear on the the daily like 100 times.</li>
+								<p><span>1/14</span></p>
+								<li>completed the first part of stat tracking: everyone will now have a blank slate of stats attached to their account upon login</li>
+								<li>also added "last login" and "date joined" fields to user information</li>
+								<li>date joined field will be instantiated next time you log in. (which would mean now unless you're reading my mind lol)</li>
+								<li>tomorrow i will begin writing the logic to handle computing/updating/displaying the stats. hold tight! </li>
+								<p><span>1/12</span></p>
+								<li>working on tracking stats</li>
+								<li>when making a long word you can now click on one of the letters in the middle of the word and it will take you back to the proper letter. that has been making me crazy for weeks. :p</li>
+								<p><span>1/11</span></p>
+								<li>!daily puzzle can only be played 1 time per Account/device/ip per day!</li>
+								<li>added number of players to popup button so you don't gotta click to see if anyone is online.</li>
+								<li>redid the code i wrote yesterday. actually storing and passing the date around so the day you play is the day your score will post to 100% of the time. NO ERRORS.</li>
+								<li>changed the font on the black buttons ( for the 4th time lol )</li>
+								<hr/>
+								<p>Back to working on things.</p>
+								<p>Also, if anyone wants to chitchat. I'll mostly be on between 8pm-11pm EST. So feel free to stop in and say hello :)</p> -->
+								
+							</div>
+						</div>
+
+					</div>
+					
+					<!-- <button class="viewusers">View Users</button> -->
+					<div class="viewusers"><p class="viewuserstext">u</p></div>
+					<img id="signout" src="/somanywords/images/signout2.png" />
+				</div>
+				
+
+				<!-- SPLASH SCREEN -->
+				<div id="loading">
+					<img class="smw" src="/somanywords/images/smw2.png" />
+					<p id="loadingstatus"> Loading dictionaries... </p>
+					<div id="loadingbar">
+						<div id="loadingprogress">
+						</div>
+					</div>
+				</div>
+				
+
+				<!-- MAIN MENU -->
+				<div id="menu" style="display: none;">
+					<img class="smw" src="/somanywords/images/smw2.png" />
+					<img id="play" class="fancybuttons" src="/somanywords/images/singleplayer.png" /><br/>
+					<img id="chatbutton" class="fancybuttons" src="/somanywords/images/playonline.png" /><br/>
+					<img id="nativetut" class="fancybuttons" src="/somanywords/images/iosapp.png" />
+				</div>
+				
+
+				<!-- MULTIPLAYER LOGIN -->
+				<div id="login" style="display: none;">
+					<img src="/somanywords/images/signin.png" style="height: 45px; margin: 40px 0px 15px 0px"/>
+					<div id="signinwrap">
+						<label>Username:</label>
+						<input type="text" id="loginusername" />
+						
+						<label>Password:</label>
+						<input type="password" id="loginpassword" />
+						<p id="loginerrors"></p>
+						<img id="loginbutton" class="fancybuttons" src="/somanywords/images/submit.png" />
+						<p id="or">- OR -</p>
+						<img id="signupbutton" class="fancybuttons" src="/somanywords/images/createaccount.png" />
+					</div>
+					
+					<img id="backtoindex" class="fancynav" src="/somanywords/images/back.png" />
+				</div>
+				
+
+				<!-- MULTIPLAYER SIGN-UP -->
+				<div id="signup" style="display: none;">
+					<img src="/somanywords/images/signup.png" style="height: 45px; margin: 40px 0px 15px 0px"/>
+					
+					<div id="signupwrap">
+						<label>New Username:</label>
+						<input type="text" id="signupusername" />
+						
+						<label>Password:</label>
+						<input type="password" id="signuppassword" />
+						
+						<label>Verify Password:</label>
+						<input type="password" id="signuppasswordtest" />
+						
+						<img id="signupsubmitbutton" class="fancybuttons" src="/somanywords/images/submit.png" />
+						<p id="signuperrors"></p>
+					</div>
+					<img id="backtosignup" class="fancynav" src="/somanywords/images/back.png" />
+				</div>
+				
+				
+				<!-- ONLINE CHAT -->
+				<div id="tempchat" style="display: none;">
+					<!-- <button class="viewusers">View Users</button> -->
+					<div class="viewusers"><p class="viewuserstext"></p></div>
+					<img id="exitchat" src="/somanywords/images/back.png" />
+					<div id="allthemessages">
+						<div id="messageboxwrap" >
+							<div id="messagebox" class="scrollpls">
+							</div>
+						</div>
+					</div>
+						
+					<div id="inputbox">
+						<div id="inputwrapper">
+							<div id="input1">
+								<input type="text" name="submitmessage" id="submitmessage" />
+							</div>
+							
+							<img id="chatsubmit" src="/somanywords/images/submit.png" />
+							
+						</div>
+					</div>
+				</div>
+				
+
+				<!-- ONLINE USERS POPUP -->
+				<div id="userlistwrap" style="display: none;">
+					<div id="userlist">
+						<div id="usersonline">
+							<div id="userlistheader">
+								<p>Users Online</p>
+							</div>
+							<div id="userlisting">
+							
+							</div>
+						</div>
+						<div id="userschatting">
+							<div id="chatterlistheader">
+								<p>Users Chatting</p>
+							</div>
+							<div id="chatterlisting">
+							
+							</div>
+						</div>
+					</div>
+					<img id="userlistexit" src="/somanywords/images/exit_x.png" />
+				</div>
+				
+
+				<!-- NATIVE IOS SCREEN -->
+				<div id="apptut" style="display: none;">
+					<p>Okay guys, i figured out a way to make this game look and feel like
+					a native iOS app! it's very simple</p>
+					<li>First click on the <img src="/somanywords/images/apptut.jpg"/> image at the bottom of your browser</li>
+					<li>Click "Add to Home Screen"</li>
+					<li>BOOM! You're done! Now you can launch the app from the homescreen and
+					the address bar and such will be gone!</li>
+					<p>Thank you for being a part of this and keep checking for updates!</p>
+					<img id="backtoindex2" class="fancybuttons" src="/somanywords/images/back.png" />
+				</div>
+				
+
+				<!-- DAILY CHALLENGE LOBBY -->
+				<div id="dclobby" style="display: none;">
+					<img id="hdaily" src="/somanywords/images/dailypuzzle.png" />
+
+					<div id="pdctabbox">
+						<table><tr>
+							<td><div id="pdctabswitchy" class="pdctabselect"><p>Yesterday</p></div></td>
+							<td><div id="pdctabswitcht" class="redborder pdctabselect"><p>Today</p></div></td>
+						</tr></table>
+					</div>
+					
+					<div id="dctabbox">
+						<table><tr>
+							<td><div id="dctabswitch3" class="dctabselect"><p>3x3</p></div></td>
+							<td><div id="dctabswitch4" class="redborder dctabselect"><p>4x4</p></div></td>
+							<td><div id="dctabswitch5" class="dctabselect"><p>5x5</p></div></td>
+						</tr></table>
+					</div>
+					
+					<div id="dctabswrapper">
+
+						<!--DAILY STATS FOR 3x3 -->
+						<div id="dctab3" class="dctabs" style="display:none;">
+							<div class="dailystatswrap">
+								<div class="dailystatswrapheader">
+									<div class="dshnumber dsh"><p>#</p></div
+									><div class="dshname dsh"><p>Username</p></div
+									><div class="dshwords dsh"><p>Words</p></div
+									><div class="dshscore dsh"><p>Score</p></div>
+								</div>
+								
+								<div class="dscwrap">
+									<div class="dschide"><p><span>3x3</span><br/>tap to show leaderboard</p></div>
+									<div id="dscinner3" class="scrollpls">
+										<!--<div id="dscnumber" class="dsc"></div
+										><div id="dscname" class="dsc"></div
+										><div id="dscwords" class="dsc"></div
+										><div id="dscscore" class="dsc"></div>-->
+									</div>
+								</div>
+							</div>
+							
+							
+							<div class="dcbuttonbox">
+								<button id="dcplay3" class="dcplay">Play 3x3</button>
+								<button class="refreshstats">Refresh</button>
+								<button class="findmedc">Find Me!</button>
+							</div>
+						</div>
+
+						<!--DAILY STATS FOR 4X4 -->
+						<div id="dctab4" class="dctabs" style="display:block;">
+							<div class="dailystatswrap">
+								<div class="dailystatswrapheader">
+									<div class="dshnumber dsh"><p>#</p></div
+									><div class="dshname dsh"><p>Username</p></div
+									><div class="dshwords dsh"><p>Words</p></div
+									><div class="dshscore dsh"><p>Score</p></div>
+								</div>
+								
+								<div class="dscwrap">
+									<div class="dschide"><p><span>4x4</span><br/>tap to show leaderboard</p></div>
+									<div id="dscinner4" class="scrollpls">
+										<!--<div id="dscnumber" class="dsc"></div
+										><div id="dscname" class="dsc"></div
+										><div id="dscwords" class="dsc"></div
+										><div id="dscscore" class="dsc"></div>-->
+									</div>
+								</div>
+							</div>
+							
+							
+							<div class="dcbuttonbox">
+								<button id="dcplay4" class="dcplay">Play 4x4</button>
+								<button class="refreshstats">Refresh</button>
+								<button class="findmedc">Find Me!</button>
+							</div>
+						</div>
+
+						<!--DAILY STATS FOR 5X5 -->
+						<div id="dctab5" class="dctabs" style="display:none;">
+							<div class="dailystatswrap">
+								<div class="dailystatswrapheader">
+									<div class="dshnumber dsh"><p>#</p></div
+									><div class="dshname dsh"><p>Username</p></div
+									><div class="dshwords dsh"><p>Words</p></div
+									><div class="dshscore dsh"><p>Score</p></div>
+								</div>
+								
+								<div class="dscwrap">
+									<div class="dschide"><p><span>5x5</span><br/>tap to show leaderboard</p></div>
+									<div id="dscinner5" class="scrollpls">
+										<!--<div id="dscnumber" class="dsc"></div
+										><div id="dscname" class="dsc"></div
+										><div id="dscwords" class="dsc"></div
+										><div id="dscscore" class="dsc"></div>-->
+									</div>
+								</div>
+							</div>
+							
+							
+							<div class="dcbuttonbox">
+								<button id="dcplay5" class="dcplay">Play 5x5</button>
+								<button class="refreshstats">Refresh</button>
+								<button class="findmedc">Find Me!</button>
+							</div>
+						</div>
+
+
+						<!--///////////////////////////////////////////////////////////////////////////-->
+						<!--///////////////////////////////////////////////////////////////////////////-->
+						<!--///////////////////////////////////////////////////////////////////////////-->
+						<!--///////////////////////////////////////////////////////////////////////////-->
+
+						<!-- PREVIOUS DAILIES -->
+						<!--DAILY STATS FOR 3x3 -->
+						<div id="pdctab3" class="pdctabs" style="display:none;">
+							<div class="dailystatswrap">
+								<div class="dailystatswrapheader">
+									<div class="dshnumber dsh"><p>#</p></div><div class="dshname dsh"><p>Username</p></div><div class="dshwords dsh"><p>Words</p></div><div class="dshscore dsh"><p>Score</p></div>
+								</div>
+								<div class="dscwrap">
+									<div id="pdscinner3" class="scrollpls"></div>
+								</div>
+							</div>
+
+							<div class="dcbuttonbox">
+								<button class="findmedc">Find Me!</button>
+							</div>
+						</div>
+
+						<!--DAILY STATS FOR 4X4 -->
+						<div id="pdctab4" class="pdctabs" style="display:none;">
+							<div class="dailystatswrap">
+								<div class="dailystatswrapheader">
+									<div class="dshnumber dsh"><p>#</p></div><div class="dshname dsh"><p>Username</p></div><div class="dshwords dsh"><p>Words</p></div><div class="dshscore dsh"><p>Score</p></div>
+								</div>
+								<div class="dscwrap">
+									<div id="pdscinner4" class="scrollpls"></div>
+								</div>
+							</div>
+							
+							<div class="dcbuttonbox">
+								<button class="findmedc">Find Me!</button>
+							</div>
+						</div>
+
+						<!--DAILY STATS FOR 5X5 -->
+						<div id="pdctab5" class="pdctabs" style="display:none;">
+							<div class="dailystatswrap">
+								<div class="dailystatswrapheader">
+									<div class="dshnumber dsh"><p>#</p></div><div class="dshname dsh"><p>Username</p></div><div class="dshwords dsh"><p>Words</p></div><div class="dshscore dsh"><p>Score</p></div>
+								</div>
+								<div class="dscwrap">
+									<div id="pdscinner5" class="scrollpls"></div>
+								</div>
+							</div>
+							
+							<div class="dcbuttonbox">
+								<button class="findmedc">Find Me!</button>
+							</div>
+						</div>
+
+					</div>
+					
+					<img id="dcexit" src="/somanywords/images/exit.png" />
+					<div class="viewusers"><p class="viewuserstext">u</p></div>
+				</div>
+				
+
+				<!-- DAILY CHALLENGE RESULTS POPUP -->
+				<div id="dcfinishwrap" style="display: none;">
+					<div id="dcfinish">
+						<h2>Your stats have been submitted!</h2>
+						<p id="dcfscore"></p>
+						<p id="dcfwords"></p>
+					</div>
+					<img id="dcfinishexit" src="/somanywords/images/exit_x.png" />
+				</div>
+				
+
+				<!-- USER STATS -->
+				<div id="viewstats" style="display: none;">
+					<p id="myusername">Me</p>
+					<div id="statsfacts">
+						<div id="sfscroll" class="scrollpls">
+							<table id="userstatstable">
+							</table>
+							<div id="specs">
+							</div>
+						</div>
+					</div>
+
+					<img id="viewstatsexit" src="/somanywords/images/exit.png" />
+					<div class="viewusers"><p class="viewuserstext">u</p></div>
+				</div>
+
+
+				<!-- MULTIPLAYER LEADERBOARDS -->
+				<div id="leaderboard" style="display: none;">
+					<p>Leaderboard</p>
+					
+					
+					<button id="viewstatsopen">My Stats</button>
+					
+					<div id="leaderboardwrap">
+						
+						<div id="leaderboardwrapheader">
+							<div id="lbscrollfix">
+								<div id="lbhnumber" class="lbh"><p>#</p></div
+								><div id="lbhname" class="lbh"><p>Username</p></div
+								><div id="lbhwords" class="lbh"><p>Games</p></div
+								><div id="lbhscore" class="lbh"><p>Points</p></div>
+							</div>
+						</div>
+						
+						<div id="lbcwrap">
+							<div id="lbcinner" class="scrollpls">
+								<!--<div class="lbbox"><div class="lbnumber"><p>1</p></div><div class="lbname"><p>Just a Test</p></div><div class="lbwinloss"><p>100/20</p></div><div class="lbpoints"><p>2500</p></div></div>-->
+							</div>
+						</div>
+					</div>
+					
+					
+					<button id="findmelb">Find Me</button>
+					<img id="lbexit" src="/somanywords/images/exit.png" />
+					<div class="viewusers"><p class="viewuserstext">u</p></div>
+				</div>
+
+
+				<!-- ZEN -->
+				<div id="zenzenzen" style="display:none;">
+				</div>
+
+				<!-- POP UP FOR PREVIOUS DAILY STATS -->
+				<div id="pdailypopwrap" style="display: none;">
+					<div id="pdailypop">
+						<div id="pdmini">
+							<div class="miniboard2">
+								<table>
+									<tr><td class="mb2cells mb2_cell0"><p>A</p></td><td class="mb2cells mb2_cell1"><p>A</p></td><td class="mb2cells mb2_cell2"><p>A</p></td><td class="mb2cells mb2_cell3"><p>A</p></td></tr>
+									<tr><td class="mb2cells mb2_cell4"><p>A</p></td><td class="mb2cells mb2_cell5"><p>A</p></td><td class="mb2cells mb2_cell6"><p>A</p></td><td class="mb2cells mb2_cell7"><p>A</p></td></tr>
+									<tr><td class="mb2cells mb2_cell8"><p>A</p></td><td class="mb2cells mb2_cell9"><p>A</p></td><td class="mb2cells mb2_cell10"><p>A</p></td><td class="mb2cells mb2_cell11"><p>A</p></td></tr>
+									<tr><td class="mb2cells mb2_cell12"><p>A</p></td><td class="mb2cells mb2_cell13"><p>A</p></td><td class="mb2cells mb2_cell14"><p>A</p></td><td class="mb2cells mb2_cell15"><p>A</p></td></tr>
+								</table>
+							</div>
+						</div>
+
+						<p id="pdnhead"></p>
+
+						<div id="pdlistdiv">
+							<div id="pdwordlist">
+								<div id="pdwordlistscroll" class="scrollpls">
+									<p id="pdlist">some things are there and some things aren't but this is just a test so it is okay</p>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<img id="pdailypopexit" src="/somanywords/images/exit_x.png" />
+				</div>
+
+				<!-- DISCONNECT ALERT BOX -->
+				<div id="disconnectwrap" style="display: none;">
+					<img src="/somanywords/images/loading.gif"/>
+					<p>There was an error with the connection. Attempting to reconnect...</p>
+					<img src="/somanywords/images/loading.gif"/>
+				</div>
+				
+			<!-- </div> -->
+			
+		</div>
+
+	</div>
+	
+	<script type="text/javascript" src="/somanywords/runthat.js"></script>
+	<script type="text/javascript" src="/somanywords/keyboard.js"></script>
+	<!--<script type="text/javascript" src="/somanywords/trie.js"></script>-->
+	<script type="text/javascript" src="/somanywords/g.js"></script>
+	<script type="text/javascript" src="/somanywords/orient.js"></script>
+	<script type="text/javascript" src="/somanywords/emotes.js"></script>
+	<script type="text/javascript" src="/somanywords/scroll.js"></script>
+	<script type="text/javascript" src="http://vexterity.com:4040/socket.io/socket.io.js"></script>
+	<script type="text/javascript">var server = io.connect('http://vexterity.com:4040');</script>
+	<script type="text/javascript" src="/somanywords/nodescripts.js"></script>
+
+	
+</body>
+</html>

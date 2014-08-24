@@ -1,0 +1,1 @@
+var curlist = ["WAB","WABBLE"];

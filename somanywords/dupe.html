@@ -1,0 +1,143 @@
+<html>
+<head>
+	
+	
+	
+</head>
+<body>
+	<script src="http://cache.university-bound.com/JScript/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/somanywords/dict/masterlist.js"></script>
+	<script type="text/javascript">
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //Adjacency matrix
+    var adjacent = [
+    [true,  true,   false,  false,  true,   true,   false,  false,  false,  false,  false,  false,  false,  false,  false,  false],
+    [true,  true,   true,   false,  true,   true,   true,   false,  false,  false,  false,  false,  false,  false,  false,  false],
+    [false, true,   true,   true,   false,  true,   true,   true,   false,  false,  false,  false,  false,  false,  false,  false],
+    [false, false,  true,   true,   false,  false,  true,   true,   false,  false,  false,  false,  false,  false,  false,  false],
+    [true,  true,   false,  false,  true,   true,   false,  false,  true,   true,   false,  false,  false,  false,  false,  false],
+    [true,  true,   true,   false,  true,   true,   true,   false,  true,   true,   true,   false,  false,  false,  false,  false],
+    [false, true,   true,   true,   false,  true,   true,   true,   false,  true,   true,   true,   false,  false,  false,  false],
+    [false, false,  true,   true,   false,  false,  true,   true,   false,  false,  true,   true,   false,  false,  false,  false],
+    [false, false,  false,  false,  true,   true,   false,  false,  true,   true,   false,  false,  true,   true,   false,  false],
+    [false, false,  false,  false,  true,   true,   true,   false,  true,   true,   true,   false,  true,   true,   true,   false],
+    [false, false,  false,  false,  false,  true,   true,   true,   false,  true,   true,   true,   false,  true,   true,   true],
+    [false, false,  false,  false,  false,  false,  true,   true,   false,  false,  true,   true,   false,  false,  true,   true],
+    [false, false,  false,  false,  false,  false,  false,  false,  true,   true,   false,  false,  true,   true,   false,  false],
+    [false, false,  false,  false,  false,  false,  false,  false,  true,   true,   true,   false,  true,   true,   true,   false],
+    [false, false,  false,  false,  false,  false,  false,  false,  false,  true,   true,   true,   false,  true,   true,   true],
+    [false, false,  false,  false,  false,  false,  false,  false,  false,  false,  true,   true,   false,  false,  true,   true]];
+
+    var b = ['S','A','T','R','D','Y','T','W','I','Y','C','A','J','E','M','N'];
+    
+	function getallwords(board){
+        if( !board || board.length < 16 ){
+            return [];
+        }
+        var wordlist = [];
+        var dex = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var curnode = masterlist.children[board[0]];
+        var depth = 0;
+        var s = '';
+        var curletter = '';
+        var testletter = '';
+
+        function indexused(tdex){
+            for( z = 0; z < depth + 1; z++ ){
+                if( tdex == dex[z] ){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function inwordlist(w){
+            for( u = 0; u < wordlist.length; u++ ){
+                if( wordlist[u] == w ){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function solve(n){
+            while( dex[depth + 1] < 16 ){
+                //console.log('-------------------------------------------');
+                curletter = board[dex[depth]];
+                testletter = board[dex[depth+1]];
+                s = '';
+                for( z = 0; z < depth + 1; z++ ){
+                    s += board[dex[z]];
+                }
+                //console.log(s + ' + ' + testletter);
+                //console.log('depth: ' + depth);
+                //console.log(dex);
+
+                //if test letter is same index as current letter, or is not adjacent, or is already part of current string, it isn't even playable. Skip it.
+                if( !(adjacent[dex[depth]][dex[depth+1]]) || indexused(dex[depth+1]) ){
+                    dex[depth + 1]++; 
+                    //console.log('LETTER NOT ADJACENT!')
+                    continue;
+                }
+
+                //At this point we know the test letter is playable. But are they possible?
+
+
+                //check if these letters can even fall next to each other.
+                var testchild = n.children[testletter];
+                if( testchild != undefined ){
+                    if( testchild.words > 0  && depth >= 1){
+                        if( !(inwordlist(s+testletter)) ){
+                            wordlist.push(s+testletter);
+                        }
+                    } 
+                    depth++;
+                    solve( testchild );
+                } else {
+                    dex[depth + 1]++;
+                }
+                
+            }
+
+            dex[depth + 1] = 0;
+            dex[depth]++;
+            if( depth == 0 && dex[0] < 16){
+                solve(masterlist.children[board[dex[depth]]]);
+            } else {
+                depth--;
+            }
+        }
+
+        solve(curnode);
+        return wordlist;
+    };
+
+    $(document).ready(function(){
+        wordlist1 = getallwords(b);
+        console.log('done');
+    })
+    
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	var testarray = ['sayyid','sayid','natty','emyds','catty','adyta','yids','yads','watt','wame','twat','tays','tawt','tame','tads','tace','syce','sadi','name','mawr','maty','matt','mace','emyd','diem','days','data','cyme','cyma','came','ance','acta','acme','yid','yad','wat','wan','tye','twa','tay','taw','tat','tas','tan','tam','tad','tac','say','sat','sad','naw','nat','nam','myc','mna','maw','mat','man','mac','ids','dye','die','day','das','caw','cat','can','cam','ays','att','ads','act','ace'];
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

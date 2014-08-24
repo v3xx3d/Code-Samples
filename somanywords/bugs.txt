@@ -1,0 +1,4 @@
+- users can still timeout randomly, if in-game it will pull them from game completely and not re-add them.
+- my ma showed up on the daily challenge 100 times O.o
+
+- room joined and all the letter were A. not an issue with getting the board. issue with moving the background around.
